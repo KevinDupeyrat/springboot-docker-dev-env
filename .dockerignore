@@ -1,4 +1,5 @@
 docker/
 target/
+!target/*.jar
 .idea/
 .gitignore

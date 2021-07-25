@@ -3,19 +3,19 @@ services:
   maven:
     build:
       context: .
-      dockerfile: dev.dockerfile
+      dockerfile: dockerfiles/dev.dockerfile
     volumes:
-      - ./../:/app
+      - ./:/app
       - maven-repo:/root/.m2
     command: clean install
   app:
     build:
       context: .
-      dockerfile: dev.dockerfile
+      dockerfile: dockerfiles/dev.dockerfile
     ports:
       - "8080:8080"
     volumes:
-      - ./../:/app
+      - ./:/app
       - maven-repo:/root/.m2
     command: spring-boot:run
 
